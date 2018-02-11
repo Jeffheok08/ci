@@ -6,6 +6,15 @@
                 <input value="<?php echo $user->fullname ?>" name="fullname" type="text" class="form-control" placeholder="กรอกชื่อ สกุล">
             </div>
             <div class="form-group">
+                       <label>username</label>
+                       <input value="<?php echo $user->username ?>" name="username" type="text" class="form-control" placeholder="username">
+                   </div>
+                   <div class="form-group">
+                       <label>password</label>
+                       <input value="<?php echo $user->password ?>" name="password" type="password" class="form-control" placeholder="password">
+                   </div>
+                
+            <div class="form-group">
                 <label>อีเมล์</label>
                 <input  value="<?php echo $user->email ?>" name="email" type="email" class="form-control" placeholder="กรอกอีเมล์">
             </div>

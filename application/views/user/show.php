@@ -5,6 +5,7 @@
    </div>
  <div class="card-body">
    <p><strong>ชื่่อ : </strong> <?php echo $user->fullname ?></p>
+   <p><strong>username : </strong> <?php echo $user->username ?></p>
    <p><strong>อีเมล์ : </strong><?php echo $user->email ?></p>
    <p><strong>อายุ : </strong><?php echo $user->age ?></p>
  </div>

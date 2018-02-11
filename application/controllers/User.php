@@ -32,6 +32,12 @@ class User extends CI_Controller
         
     }
 
+    public function profile()
+    {
+     echo "You are Now Login!";
+    }
+
+
     public function edit($userId)
     {
         $user = $this->user_model->getUserByID($userId);
