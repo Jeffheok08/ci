@@ -8,6 +8,7 @@
                 <tr>
                     <th><i class="fas fa-heart fa-spin "></i></th>
                     <th>username</th>
+                    <th>ระดับ</th>
                     <th>ชื่อ - สกุล</th>
                     <th>อีเมล์</th>
                     <th>อายุ</th>
@@ -21,14 +22,19 @@
                     
                     <td><?php echo $user->user_id ?></td>
                     <td><?php echo $user->username?></td>
+                    <td><?php echo $user->name ?></td>
                     <td><?php echo $user->fullname ?></td>
                     <td><?php echo $user->email ?></td>
                     <td><?php echo $user->age ?></td>
                     <td>
-                    <a href="/user/show/<?php echo $user->user_id ?>" class="btn btn-info"><i class="fas fa-eye " ></i> แสดง</a>
-                        <a href="/user/edit/<?php echo $user->user_id ?>" class="btn btn-warning"><i class="fas fa-edit"></i> แก้ไข</a>
-                        <a onclick="javascript: return confirm('แน่ใจก่อ ?')" href="/user/delete/<?php echo $user->user_id ?>" class="btn btn-danger"><i class="fas fa-minus-circle"></i> ลบ</a>
-                    </td>
+                        
+                    <a href="/user/show/<?php echo $user->user_id ?>" class="btn btn-info"><i class="fa fa-search"></i> แสดง</a>
+                       <?php if ($this->session->has_userdata('user_id') and $this->session->userdata('user_type_id') == '1') { ?>
+                       <a href="/user/edit/<?php echo $user->user_id ?>" class="btn btn-warning"><i class="fa fa-edit"></i> แก้ไข</a>
+                       <a onclick="javascript: return confirm('แน่ใจหรือ ?')" href="/user/delete/<?php echo $user->user_id ?>" class="btn btn-danger"><i class="fa fa-times"></i> ลบ</a>
+                       <?php } ?>
+
+                       </td>
                 </tr>
                 
                 <?php

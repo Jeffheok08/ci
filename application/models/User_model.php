@@ -4,7 +4,10 @@ class User_model extends CI_Model
 {
     public function getUser()
     {
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM users
+                 INNER JOIN user_types
+                 ON users.user_type_id = user_types.user_type_id";
+
         $users = $this->db->query($query);
         return $users;
     }
@@ -20,10 +23,11 @@ class User_model extends CI_Model
         $fullname = $data['fullname'];
         $username = $data['username'];
         $password = $data['password'];
-        $pic = $data['pic'];
+        $user_type_id = $data['user_type_id'];
+        $pic = '';
         $email = $data['email'];
         $age = $data['age'];
-        $query = "INSERT INTO users (fullname, username, password , email, age) VALUES ('$fullname', '$username', '$password', '$pic','$email', '$age')";
+        $query = "INSERT INTO users (fullname, username, password, user_type_id, pic , email, age) VALUES ('$fullname', '$username', '$password','$user_type_id', '$pic','$email', '$age')";
         return $this->db->query($query);
     }
 
@@ -32,10 +36,11 @@ class User_model extends CI_Model
         $fullname = $data['fullname'];
         $username = $data['username'];
         $password = $data['password'];
-        $pic = $data['pic'];
+        $user_type_id = $data['user_type_id'];
+        $pic = '';
         $email = $data['email'];
         $age = $data['age'];
-        $query = "UPDATE users SET fullname = '$fullname', username = '$username', password = '$password', pic = '$pic', email = '$email', age = '$age' WHERE user_id = '$userId'";
+        $query = "UPDATE users SET fullname = '$fullname', username = '$username', password = '$password',user_type_id = '$user_type_id', pic = '$pic', email = '$email', age = '$age' WHERE user_id = '$userId'";
         return $this->db->query($query);
     }
     // application/models

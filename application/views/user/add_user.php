@@ -13,6 +13,16 @@
                        <label>password</label>
                        <input name="password" type="password" class="form-control" placeholder="password">
                    </div>
+                   <div class="form-group">
+                       <label>ประเภทผู้ใช้งาน</label>
+                       <select name="user_type_id" class="form-control">
+                       <?php foreach ($user_types->result() as $user_type) {
+?>
+                       <option value="<?php echo $user_type->user_type_id ?>"><?php echo $user_type->name ?></option>
+                       <?php
+} ?>
+                   </select>
+                   </div>
 
                    <div class="form-group">
                        <label>อีเมล์</label>
