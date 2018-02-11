@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2018 at 10:35 AM
+-- Generation Time: Feb 11, 2018 at 10:39 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.0.26
 
@@ -30,6 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `pic` varchar(100) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `age` int(11) NOT NULL,
@@ -41,12 +45,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `fullname`, `email`, `age`, `created_at`, `updated_at`) VALUES
-(1, 'Bundit Nuntates', 'silkyland@gmail.com', 30, '2018-02-04 00:00:00', '2018-02-04 00:00:00'),
-(2, 'gsret', 'gaer@hotmail.com', 20, '2018-02-04 00:00:00', '2018-02-04 00:00:00'),
-(3, '', '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, '', 'hsrt@gmail.com', 12, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, '', 'hsrt@gmail.com', 12, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` (`user_id`, `user_type_id`, `username`, `password`, `pic`, `fullname`, `email`, `age`, `created_at`, `updated_at`) VALUES
+(2, 1, 'uu', 'oo', '', 'gigi bibi', 'gaer@hotmail.com', 20, '2018-02-04 00:00:00', '2018-02-04 00:00:00'),
+(15, 2, 'ผก้', 'ะ้่หพ', '', '', 'hsrth@hotmail.com', 15, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,7 @@ ALTER TABLE `user_types`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_types`
